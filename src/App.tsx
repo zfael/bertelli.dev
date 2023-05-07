@@ -12,7 +12,7 @@ function App() {
       <div className="profile-picture">
         <img src="https://ca.slack-edge.com/T0257R0RP-U03BQN44N9Y-c46a8968204b-512" alt="Your Name" />
       </div>
-      <h1 className="name">R. Bertelli</h1>
+      <h1 className="name">Rafael Bertelli</h1>
       <h3 className="job-title">Software Engineer</h3>
       <p className="summary">
         Highly skilled software development professional bringing more than 10 years in software design, development,
@@ -22,7 +22,7 @@ function App() {
       
 
       <div className="social-icons">
-        <p className="reach-out">Reach me out at 👇</p>
+        <p className="reach-out">Get In Touch👇</p>
         <a href="mailto:rafael@bertelli.dev" target="_blank" rel="noreferrer">
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
