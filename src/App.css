@@ -1,0 +1,156 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "system-ui", Roboto, "Helvetica Neue", sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: #fff;
+  
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  font-family: fontawesome;
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 28px;
+  padding-top: 12px;
+  margin: 0 2px;
+  -o-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-font-smoothing: antialiased;
+}
+
+a:hover {
+  background: #fff;
+  color: #282c34;
+}
+
+/* pop-up text */
+
+a span {
+  color: #666;
+  position: absolute;
+  font-family: sans-serif;
+  bottom: 0;
+  left: -25px;
+  right: -25px;
+  padding: 5px 7px;
+  z-index: -1;
+  font-size: 14px;
+  border-radius: 2px;
+  background: #fff;
+  visibility: hidden;
+  opacity: 0;
+  -o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.terminal-cursor {
+  font-size: 1rem;
+  line-height: 1;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+
+/* pop-up text arrow */
+
+a span:before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 40px;
+}
+
+
+a:hover span {
+  bottom: 50px;
+  visibility: visible;
+  opacity: 1;
+}
+
+body {
+  margin: 0;
+}
+
+.social-icons p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.presentation {
+  background-color: #f5f5f5;
+  color: #666666;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.profile-picture {
+  border-radius: 50%;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 150px;
+}
+
+.profile-picture img {
+  display: block;
+  height: 100%;
+  margin: 0;
+  width: 100%;
+}
+
+.name {
+  font-size: 2em;
+  margin: 20px 0;
+  color: #465C69;
+}
+
+.job-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin: 0;
+  margin-top: -23px;
+}
+
+.summary {
+  font-size: 1.1em;
+  line-height: 1.5;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: center; /* Center the text within the div */
+  padding: 20px; /* Add some padding for vertical spacing */
+  color: #465C69;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.reach-out {
+  font-weight: bold;
+}
