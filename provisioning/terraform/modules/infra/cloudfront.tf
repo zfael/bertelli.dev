@@ -3,7 +3,7 @@ resource "aws_cloudfront_distribution" "blog" {
   price_class = "PriceClass_100"
 
   default_root_object = "index.html"
-  comment             = "Bertelli Blog Cloud Distribution"
+  comment             = "Bertelli Blog"
 
   aliases = [
     "www.${var.domain_name}",
