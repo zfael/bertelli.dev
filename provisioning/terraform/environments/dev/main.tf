@@ -11,11 +11,11 @@ provider "aws" {
 }
 
 terraform {
-  backend "s3" {
-    bucket  = "provisioning-terraform-d439"
-    key     = "bertelli.dev/terraform.tfstate"
-    region  = "us-east-1"
-    encrypt = true
+  cloud {
+    organization = "bertelli"
+    workspaces {
+      name = "bertelli-dev"
+    }
   }
 }
 

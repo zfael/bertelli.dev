@@ -33,7 +33,7 @@ module "s3_blog" {
   version = "3.10.1"
 
   bucket = var.domain_name
-  acl    = "private"
+  acl    = null
 
   attach_policy = true
   policy        = data.aws_iam_policy_document.s3_bucket_access_policy.json
