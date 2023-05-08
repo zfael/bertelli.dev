@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import ReactGA from 'react-ga';
+import ReactGA from 'react-ga4';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -9,8 +9,8 @@ import './App.css';
 
 const initializeReactGA = () => {
   console.log('initiating GA');
-  ReactGA.initialize('G-YX9TCZ7M6C', { debug: true, titleCase: false });
-  ReactGA.pageview('/home');
+  ReactGA.initialize('G-YX9TCZ7M6C');
+  ReactGA.send({ hitType: "pageview", page: "/home" });
 };
 
 const handleClick = (event, category, action) => {
