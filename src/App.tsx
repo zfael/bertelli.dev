@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons';
@@ -6,7 +8,27 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
 
+const initializeReactGA = () => {
+  console.log('initiating GA')
+  ReactGA.initialize('G-YX9TCZ7M6C');
+  ReactGA.pageview('/home');
+}
+
+const handleClick = (event, category, action) => {
+  event.preventDefault();
+  ReactGA.event({
+    category,
+    action
+  });
+
+  window.open(event.currentTarget.href, '_blank', 'noreferrer');
+};
+
 function App() {
+  useEffect(() => {
+    initializeReactGA();
+  }, []);
+
   return (
     <div className="container">
       <div className="profile-picture">
@@ -23,28 +45,16 @@ function App() {
 
       <div className="social-icons">
         <p className="reach-out">Get In Touch👇</p>
-        <a href="mailto:rafael@bertelli.dev" target="_blank" rel="noreferrer">
+        <a href="mailto:rafael@bertelli.dev" target="_blank" rel="noreferrer" onClick={(event)=> handleClick(event, 'social-buttons', 'email')}>
           <FontAwesomeIcon icon={faEnvelope} />
         </a>
-        <a href="https://www.linkedin.com/in/rpbertelli/" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/rpbertelli/" target="_blank" rel="noreferrer" onClick={(event)=> handleClick(event, 'social-buttons', 'linkedin')}>
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
-        <a href="https://github.com/zfael" target="_blank" rel="noreferrer">
+        <a href="https://github.com/zfael" target="_blank" rel="noreferrer" onClick={(event)=> handleClick(event, 'social-buttons', 'github')}>
           <FontAwesomeIcon icon={faGithub} />
         </a>
       </div>
-
-      {/* <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-        <a href="mailto:youremail@example.com">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </a>
-        <a href="https://www.linkedin.com/">
-          <FontAwesomeIcon icon={faLinkedinIn} />
-        </a>
-        <a href="https://github.com/">
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-      </div> */}
     </div>
   );
 }
